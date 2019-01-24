@@ -1,0 +1,43 @@
+body {
+    background-color: grey;
+    font-size: large;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: red;
+}
+
+.blink{
+    width:200px;
+    height: 50px;
+    background-color: lawngreen;
+    padding: 15px;
+    text-align: center;
+    line-height: 50px;
+}
+span{
+    font-size: 25px;
+    font-family: cursive;
+    color: black;
+    animation: blink 1s linear infinite;
+    text-align: center;
+}
+@keyframes blink{
+    0%{opacity: 0;}
+    50%{opacity: .5;}
+    100%{opacity: 1;}
+}
+
+div {
+    background-color: lightgrey;
+    width: 300px;
+    border: 20px solid green;
+    padding: 20px;
+    margin: 20px;
+    position:absolute;
+    height:100px;
+    left:610px;
+    top:150px;
+}
