@@ -6,38 +6,25 @@ import com.crud.tasks.domain.TrelloList;
 import com.crud.tasks.domain.TrelloListDto;
 import com.crud.tasks.mapper.TrelloMapper;
 import com.crud.tasks.service.TrelloService;
-import com.crud.tasks.trello.client.TrelloClient;
-import com.crud.tasks.trello.config.TrelloConfig;
 import com.crud.tasks.trello.facade.TrelloFacade;
 import com.crud.tasks.trello.validator.TrelloValidator;
-import org.junit.Before;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Matchers.anyList;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class TrelloFacadeTest {
 
     @InjectMocks
-    private TrelloClient trelloClient;
-
-    @Mock
-    private RestTemplate restTemplate;
-
-    @Mock
-    private TrelloConfig trelloConfig;
-
-    @Mock
     private TrelloFacade trelloFacade;
 
     @Mock
