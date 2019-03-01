@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -61,7 +62,19 @@ public class TrelloFacadeTest {
         List<TrelloBoardDto> fetchedTrelloBoards = trelloFacade.fetchTrelloBoards();
 
         //Then
+        assertNotNull(fetchedTrelloBoards);
         assertEquals(1, fetchedTrelloBoards.size());
+
+        fetchedTrelloBoards.forEach(trelloBoardDto -> {
+            assertEquals("1",trelloBoardDto.getId());
+            assertEquals("my_task",trelloBoardDto.getName());
+
+            trelloBoardDto.getLists().forEach(trelloListDto -> {
+                assertEquals("1",trelloListDto.getId());
+                assertEquals("my_list",trelloListDto.getName());
+                assertEquals(false,trelloListDto.isClosed());
+            });
+        });
     }
     @Test
     public void shouldFetchEmptyTrelloBoards() {
