@@ -18,9 +18,6 @@ public class TrelloController {
     @Autowired
     private TrelloFacade trelloFacade;
 
-    @Autowired
-    private TrelloService trelloService;
-
     @RequestMapping(method = RequestMethod.GET, value = "getTrelloBoards")
     public List<TrelloBoardDto> getTrelloBoards() {
         return trelloFacade.fetchTrelloBoards();
