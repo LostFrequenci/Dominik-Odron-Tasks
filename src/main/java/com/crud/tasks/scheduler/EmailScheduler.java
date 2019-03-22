@@ -29,7 +29,6 @@ public class EmailScheduler {
         if (size == 1) { tasksCounter = " task";} else { tasksCounter = " tasks";}
         simpleEmailService.send(new Mail(
                 adminConfig.getAdminMail(),
-                "",
                 SUBJECT,
                 "Currently in database you got: " + size + tasksCounter
         ));
