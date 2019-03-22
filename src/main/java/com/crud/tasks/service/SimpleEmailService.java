@@ -35,9 +35,6 @@ public class SimpleEmailService {
     private SimpleMailMessage createMailMessage(final Mail mail){
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setTo(mail.getMailTo());
-        if (mail.getToCc() != null && !mail.getToCc().equals("")) {
-            mailMessage.setCc(mail.getToCc());
-        }
         mailMessage.setSubject(mail.getSubject());
         mailMessage.setText(mail.getMessage());
         return mailMessage;
@@ -47,9 +44,6 @@ public class SimpleEmailService {
         return mimeMessage -> {
             MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);
             messageHelper.setTo(mail.getMailTo());
-            if (mail.getToCc() != null && !mail.getToCc().equals("")) {
-                messageHelper.setCc(mail.getToCc());
-            }
             messageHelper.setSubject(mail.getSubject());
             messageHelper.setText(mailCreatorService.buildTrelloCardEmail(mail.getMessage()),true);
         };
