@@ -40,7 +40,7 @@ public class MailCreatorService {
         context.setVariable("company_email",adminConfig.getCompanyEmail());
         context.setVariable("show_button",true);
         context.setVariable("is_friend",true);
-        context.setVariable("application_funtionality",functionality);
+        context.setVariable("application_functionality",functionality);
         return templateEngine.process("created-trello-card-mail",context);
     }
 
@@ -63,7 +63,7 @@ public class MailCreatorService {
         context.setVariable("company_email",adminConfig.getCompanyEmail());
         context.setVariable("show_button",true);
         context.setVariable("is_friend",true);
-        context.setVariable("application_funtionality",functionality);
+        context.setVariable("application_functionality",functionality);
         return templateEngine.process("daily-mail",context);
     }
 }
